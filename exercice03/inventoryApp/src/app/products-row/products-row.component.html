@@ -1,0 +1,23 @@
+<div>
+<div class="image"><app-products-image [image] = "product.image" ></app-products-image></div>
+<div class="content">
+  <div class="header">{{product.name}}</div>
+  <div class="meta">
+    <div class="product-sku">
+      SKU #{{product.sku}}
+    </div>
+    <div class="description">
+        <app-products-departement [categories] = "product.categories"> </app-products-departement>
+    </div>
+  </div>
+</div>
+<div class="price">
+    <app-price-display [price] = "product.price"></app-price-display>
+</div>
+{{product.qte}}
+ <div class="ui buttons">
+   <button class="ui button" (click)="ajouterPanier()">+</button>
+   <div class="or" data-texte='or'></div>
+   <button class="ui positive button" (click)="retirerPanier()" >-</button>
+ </div>
+</div>

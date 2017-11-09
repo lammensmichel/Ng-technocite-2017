@@ -1,0 +1,30 @@
+<div *ngIf="IsLogin">
+    <h1>welcome</h1>
+  </div>
+  <div *ngIf="!IsLogin">
+  
+  <div class="ui raised segment">
+    <h2 class="ui header">login form</h2>
+    <form [formGroup]="myForm"
+      [class.error]="!myForm.valid && myForm.touched"
+      class="ui form" (ngSubmit)="onSubmit(myForm.value)">
+      <div class="field">
+        <label for="loginInput">Login :</label>
+        <input type="text" id="loginInput" placeholder="login" name ="login"
+         [formControl]="login">
+         <div *ngIf="!login.valid && login.touched" class="ui message">login is invalid</div>
+      </div>
+      <div class="field">
+        <label for="passwordInput">password :</label>
+        <input type="password" id="passwordInput" placeholder="password" name ="password"
+        [formControl]="password" >
+        <div *ngIf="password.hasError('required')
+         && password.touched" class="ui message">password is required</div>
+        <div *ngIf="!myForm.valid && myForm.touched" class="ui message">form is invalid</div>
+        <div *ngIf="myForm.touched && (password.hasError('minlength') || password.hasError('maxlength'))" 
+        class="ui message">size password</div>
+      </div>
+      <button type="submit" class="ui button">Submit</button>
+    </form>
+  </div>
+  </div>

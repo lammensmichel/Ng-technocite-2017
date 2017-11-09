@@ -1,0 +1,7 @@
+<div class="product-department">
+
+  <span *ngFor='let categorie of categories; let i= index'>
+    <a href='#'> {{categorie}}</a>
+    <span> {{i < (categories.length-1)?'>':'' }}</span>
+  </span>
+</div>
