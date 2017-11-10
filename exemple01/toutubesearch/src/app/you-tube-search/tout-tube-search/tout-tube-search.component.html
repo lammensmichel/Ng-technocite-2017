@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="page-header">
+    <h1>TOUTUBE Search</h1>
+    loading...
+  </div>
+  <div class="row">
+    <app-search-box (loading)="loading = $event" (results)="upadateResult($event)"></app-search-box>
+  </div>
+  <div class="row">
+    <app-search-result *ngFor="let result of results" [result]="result"></app-search-result>
+  </div>
+</div>
