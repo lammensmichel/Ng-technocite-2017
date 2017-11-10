@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.httpService.getMeteo().subscribe(
       (results: Object): any => {
-        this.jours = results.query.results.channel.item.forecast.map((x) => new Jour(x.date, x.text));
+        this.jours = results.query.results.channel.item.forecast.map((x) => new Jour(x.date, x.text, x.text));
       }
     );
   }
